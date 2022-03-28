@@ -25,7 +25,7 @@ object DistanceToNearestNeighborDriver extends DistanceCalculation {
   def main (args: Array[String]) {
     val argsParser = new ArgsParser()
 
-    if (argsParser.parse(args)) {
+    if (argsParser.parse (args,"").isDefined) {
       val clock = new Clock()
 
       val sc = new SparkContext(argsParser.args.masterUrl,

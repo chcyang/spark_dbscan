@@ -36,7 +36,7 @@ object DbscanDriver {
 
     val argsParser = new ArgsParser ()
 
-    if (argsParser.parse (args)) {
+    if (argsParser.parse (args,"").isDefined) {
 
       val clock = new Clock ()
 

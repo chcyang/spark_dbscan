@@ -27,7 +27,7 @@ class CommandLineParsingSuite extends DbscanSuiteBase {
 
     val args = requiredArgs ++ dbscanAdditionalArgs
 
-    val parsingResult = parser.parse(args)
+    val parsingResult = parser.parse(args, "").isDefined
 
     assert (parsingResult)
     assertThatDbscanRequiredArgumentsWereFound(parser)
@@ -42,7 +42,7 @@ class CommandLineParsingSuite extends DbscanSuiteBase {
 
     val args = requiredArgs ++ dbscanAdditionalArgs ++ distanceMeasureArg ++ borderPointsAsNoiseArg
 
-    val parsingResult = parser.parse(args)
+    val parsingResult = parser.parse(args, "").isDefined
 
     assert (parsingResult)
     assertThatDbscanRequiredArgumentsWereFound(parser)
